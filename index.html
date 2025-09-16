@@ -337,7 +337,6 @@
         <model-viewer
             id="bedModel"
             src="models/scene.gltf"
-            scale="1.9 0.4 0.9"
             alt="Set Completo Camera da Letto"
             ar
             ar-modes="scene-viewer webxr quick-look"
@@ -488,7 +487,7 @@
             console.error('Error message:', event.detail.message);
             
             // Mostra errore dettagliato all'utente
-            const errorMsg = `Error loading 3D model:\n${event.detail.message || 'Unknown error'}\n\nPath: models/bed_single.glb`;
+            const errorMsg = `Error loading 3D model:\n${event.detail.message || 'Unknown error'}\n\nPath: models/scene.gltf`;
             alert(errorMsg);
         });
 
