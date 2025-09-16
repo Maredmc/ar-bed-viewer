@@ -336,7 +336,7 @@
         <!-- Model Viewer -->
         <model-viewer
             id="bedModel"
-            src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Box/glTF-Binary/Box.glb"
+            src="models/bed_single.glb"
             scale="1.9 0.4 0.9"
             alt="Set Completo Camera da Letto"
             ar
@@ -488,7 +488,7 @@
             console.error('Error message:', event.detail.message);
             
             // Mostra errore dettagliato all'utente
-            const errorMsg = `Error loading 3D model:\n${event.detail.message || 'Unknown error'}\n\nPath: models/completo_con_piedini.gltf`;
+            const errorMsg = `Error loading 3D model:\n${event.detail.message || 'Unknown error'}\n\nPath: models/bed_single.glb`;
             alert(errorMsg);
         });
 
