@@ -336,7 +336,7 @@
         <!-- Model Viewer -->
         <model-viewer
             id="bedModel"
-            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+            src="models/completo_con_piedini.gltf"
             alt="Set Completo Camera da Letto"
             ar
             ar-modes="scene-viewer webxr quick-look"
@@ -474,15 +474,21 @@
 
         // Model loaded
         modelViewer.addEventListener('load', () => {
-            console.log('Model loaded successfully');
+            console.log('✅ Model loaded successfully');
+            console.log('Model bounds:', modelViewer.getBoundingBoxCenter());
             // Scale model to real-world size (1.9m length)
-            modelViewer.scale = '1.9 1.9 1.9';
+            modelViewer.scale = '1 1 1'; // Prova prima con scala 1:1
         });
 
         // Error handling
         modelViewer.addEventListener('error', (event) => {
-            console.error('Model error:', event.detail);
-            alert('Error loading 3D model. Please check if the file exists at: models/completo_con_piedini.gltf');
+            console.error('❌ Model error:', event.detail);
+            console.error('Error type:', event.detail.type);
+            console.error('Error message:', event.detail.message);
+            
+            // Mostra errore dettagliato all'utente
+            const errorMsg = `Error loading 3D model:\n${event.detail.message || 'Unknown error'}\n\nPath: models/completo_con_piedini.gltf`;
+            alert(errorMsg);
         });
 
         // AR tracking
